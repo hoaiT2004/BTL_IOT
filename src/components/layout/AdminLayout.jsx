@@ -7,10 +7,8 @@ const AdminLayout = () => (
     <aside className="sidebar">
       <h2>Admin</h2>
       <nav>
-        <Link to="/admin">Dashboard</Link>
-        <Link to="/admin/users">Tài khoản chủ khóa</Link>
+        <Link to="/admin/users">Quản lý tài khoản</Link>
         <Link to="/admin/devices">Quản lý khóa</Link>
-        <Link to="/admin/firmware">Firmware</Link>
       </nav>
     </aside>
     <main className="content">

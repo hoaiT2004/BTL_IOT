@@ -88,7 +88,7 @@ const DeviceDetailPage = () => {
 
         <div className="info-row">
           <div className="info-label">Phiên bản</div>
-          <div className="info-value">{device.firmwareVersion || device.version || 'N/A'}</div>
+          <div className="info-value">{device.version || 'N/A'}</div>
         </div>
 
         <div className="info-row">

@@ -17,7 +17,6 @@ import UserNotificationsPage from "./pages/user/UserNotificationsPage";
 
 import UserManagementPage from "./pages/admin/UserManagementPage";
 import AdminDeviceListPage from "./pages/admin/AdminDeviceListPage";
-import FirmwareManagementPage from "./pages/admin/FirmwareManagementPage";
 
 const App = () => (
   <BrowserRouter>
@@ -34,7 +33,6 @@ const App = () => (
       >
         <Route path="users" element={<UserManagementPage />} />
         <Route path="devices" element={<AdminDeviceListPage />} />
-        <Route path="firmware" element={<FirmwareManagementPage />} />
         <Route index element={<AdminDeviceListPage />} />
       </Route>
 

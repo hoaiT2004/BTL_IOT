@@ -43,8 +43,24 @@ const mockDevices = [
 
 const deviceApi = {
   // Admin
-  getAllDevices: () => apiClient.get("/admin/devices"),
-  updateDeviceByAdmin: (id, data) => apiClient.put(`/admin/devices/${id}`, data),
+  // getAllDevices: () => apiClient.get("/admin/devices"),
+  getAllDevices: () => Promise.resolve({data: mockDevices }),
+  updateDeviceByAdmin: (id, data) => {
+    const foundIndex = mockDevices.findIndex((d) => d._id === id);
+    if (foundIndex > -1) {
+      mockDevices[foundIndex] = { ...mockDevices[foundIndex], ...data };
+      return Promise.resolve({ data: mockDevices[foundIndex] });
+    }
+    return apiClient.put(`/admin/devices/${id}`, data);
+  },
+  deleteDeviceByAdmin: (id) => {
+    // const foundIndex = mockDevices.findIndex((d) => d._id === id);
+    // if (foundIndex > -1) {
+    //   const removed = mockDevices.splice(foundIndex, 1);
+    //   return Promise.resolve({ data: removed[0] });
+    // }
+    return apiClient.delete(`/admin/devices/${id}`);
+  },
 
   // User
   getMyDevices: () => 
@@ -54,7 +70,7 @@ const deviceApi = {
   getDeviceDetail: (id) => {
     const found = mockDevices.find((d) => d._id === id);
     if (found) {
-      return Promise.resolve({ data: { ...found, firmwareVersion: found.version } });
+      return Promise.resolve({ data: found });
     }
     return apiClient.get(`/users/me/devices/${id}`);
   },
