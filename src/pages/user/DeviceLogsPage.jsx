@@ -21,6 +21,8 @@ const DeviceLogsPage = () => {
             <th>Action</th>
             <th>Trạng thái</th>
             <th>Người dùng</th>
+            <th>Tiêu đề</th>
+            <th>Mô tả</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +32,8 @@ const DeviceLogsPage = () => {
               <td>{l.actionType}</td>
               <td>{l.status}</td>
               <td>{l.userId}</td>
+              <td>{l.title}</td>
+              <td>{l.description}</td>
             </tr>
           ))}
         </tbody>

@@ -11,15 +11,16 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await authApi.login(username, password);
-      const { accessToken, role } = res.data;
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("role", role);
-      navigate(role === "admin" ? "/admin" : "/user");
-    } catch {
-      setError("Sai tài khoản hoặc mật khẩu");
-    }
+    navigate("/admin");
+    // try {
+    //   const res = await authApi.login(username, password);
+    //   const { accessToken, role } = res.data;
+    //   localStorage.setItem("accessToken", accessToken);
+    //   localStorage.setItem("role", role);
+    //   navigate(role === "admin" ? "/admin" : "/user");
+    // } catch {
+    //   setError("Sai tài khoản hoặc mật khẩu");
+    // }
   };
 
   return (

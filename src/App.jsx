@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles/App.css";
 import LoginPage from "./pages/auth/LoginPage";
 import PrivateRoute from "./components/common/PrivateRoute";
 import AdminLayout from "./components/layout/AdminLayout";
@@ -8,6 +9,7 @@ import UserLayout from "./components/layout/UserLayout";
 
 import UserProfilePage from "./pages/user/UserProfilePage";
 import UserDeviceListPage from "./pages/user/UserDeviceListPage";
+import AddDevicePage from "./pages/user/AddDevicePage";
 import DeviceDetailPage from "./pages/user/DeviceDetailPage";
 import DeviceLogsPage from "./pages/user/DeviceLogsPage";
 import DeviceFacePage from "./pages/user/DeviceFacePage";
@@ -46,6 +48,7 @@ const App = () => (
       >
         <Route path="profile" element={<UserProfilePage />} />
         <Route path="devices" element={<UserDeviceListPage />} />
+        <Route path="devices/add" element={<AddDevicePage />} />
         <Route path="devices/:deviceId" element={<DeviceDetailPage />} />
         <Route path="devices/:deviceId/logs" element={<DeviceLogsPage />} />
         <Route path="devices/:deviceId/faces" element={<DeviceFacePage />} />

@@ -20,4 +20,3 @@ const AdminLayout = () => (
 );
 
 export default AdminLayout;
-,k/
